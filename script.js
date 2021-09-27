@@ -37,6 +37,9 @@ var create=function(){
       }
     }
   })
+  .catch(function(err){
+    console.log(err);
+  })
 }
 const timeConvert=function(unix_timestamp){
   var date = new Date(unix_timestamp * 1000);
@@ -92,6 +95,9 @@ const popup=function(id,name){
       popup.style.display = "none";
     }
   }
+})
+.catch(function(err){
+  console.log(err);
 })
 
 }
