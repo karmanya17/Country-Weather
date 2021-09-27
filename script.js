@@ -53,7 +53,7 @@ const timeConvert=function(duration){
 const popup=function(id,name){
   console.log(id);
   console.log(name);
-  const url=`https://api.openweathermap.org/data/2.5/weather?q=,,`+id+`&appid=b253f6baa12a1fcb2075f8961b77f1f3&units=metric`
+  const url=`https://api.openweathermap.org/data/2.5/weather?q=,,`+id+`&appid=7efabb514883dd5b2b8b5d8fc318dec0&units=metric`
   fetch(url)
   .then(function(weatherData){
     return weatherData.json();
