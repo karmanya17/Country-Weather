@@ -136,13 +136,19 @@ border-radius: 15px;
   top:80px;
   font-weight: bolder;
   font-size: 40px;
+  color:#EEEEEE;
 }
 .tempdiv>h3{
   position:relative;
   left:20px;
   top:20px;
+  color:#EEEEEE;
 }
-
+.tempdiv>h4{
+  color:#EEEEEE;
+  margin-left:20px;
+  margin-top:20px;
+}
 .temp{
   font-size: 60px;
 }

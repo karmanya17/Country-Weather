@@ -65,6 +65,7 @@ const popup=function(id,name){
 
     var span = document.getElementById("close");
     var countryName=document.getElementById("countryName")
+    var weatherMain=weatherData.weather[0].main;
     var report=weatherData.weather[0].description;
     var temp=Math.floor(weatherData.main.temp);
     var humidity=weatherData.main.humidity;
@@ -76,6 +77,27 @@ const popup=function(id,name){
   //  console.log(weatherData.weather[0].icon);
     var cloudimg="http://openweathermap.org/img/w/"+weatherData.weather[0].icon+".png";
   //  console.log(cloudimg);
+    var img;
+    if(weatherMain==="Clouds")
+    {
+      img="images/cloudy.jfif";
+    }
+    if(weatherMain==="Rain")
+    {
+      img="images/rainy.jpg";
+    }
+    if(weatherMain==="Clear")
+    {
+      img="images/sunny.jpg";
+    }
+    if(weatherMain==="Snow")
+    {
+      img="images/snow.jpg";
+    }
+    if(weatherMain==="Mist" ||weatherMain==="Fog"||weatherMain==="Smoke")
+    {
+      img="images/mist.jpg";
+    }
     var tempdiv=`<div class="temp-div"><p><span class="temp">  `+temp+String.fromCharCode(176)+`</span>`+name+`</div><div class="conditionImg"><img src=`+cloudimg+`></div></p>`;
     countryName.innerHTML=tempdiv;
     document.querySelector(".feelslike").innerText=report;
@@ -84,6 +106,7 @@ const popup=function(id,name){
     document.querySelector(".svalue").innerText=sunrise;
     document.querySelector(".maxvalue").innerText=maxtemp+String.fromCharCode(176)+"C";
     document.querySelector(".minvalue").innerText=mintemp+String.fromCharCode(176)+"C";
+    document.querySelector(".tempdiv").style=`background-image:url(${img});`;
     popup.style.display = "block";
 
   span.onclick = function() {
