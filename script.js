@@ -38,17 +38,14 @@ var create=function(){
     }
   })
 }
-const timeConvert=function(duration){
-  var milliseconds = parseInt((duration % 1000) / 100),
-    seconds = Math.floor((duration / 1000) % 60),
-    minutes = Math.floor((duration / (1000 * 60)) % 60),
-    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+const timeConvert=function(unix_timestamp){
+  var date = new Date(unix_timestamp * 1000);
+// Hours part from the timestamp
+var hours = date.getHours();
+// Minutes part from the timestamp
+var minutes = "0" + date.getMinutes();
 
-  hours = (hours < 10) ? "0" + hours : hours;
-  minutes = (minutes < 10) ? "0" + minutes : minutes;
-  seconds = (seconds < 10) ? "0" + seconds : seconds;
-
-  return hours + ":" + minutes;
+  return hours + ":" + minutes.substr(-2);
 }
 const popup=function(id,name){
   console.log(id);
@@ -69,6 +66,7 @@ const popup=function(id,name){
     var temp=Math.floor(weatherData.main.temp);
     var humidity=weatherData.main.humidity;
     var wind=Math.floor(weatherData.wind.speed);
+    console.log(weatherData.sys.sunrise);
     var sunrise=timeConvert(weatherData.sys.sunrise);
     var maxtemp=Math.floor(weatherData.main.temp_max);
     var mintemp=Math.floor(weatherData.main.temp_min);
