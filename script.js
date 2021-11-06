@@ -11,7 +11,7 @@ var create=function(){
   })
   .then(function(countries){
     var rows=Math.floor(countries.length/3);
-    console.log(rows);
+    // console.log(rows);
 
     var c=0;
     console.log(countries);
