@@ -59,7 +59,7 @@ const popup=function(id,name){
     return weatherData.json();
   })
   .then(function(weatherData){
-    console.log(weatherData);
+    //console.log(weatherData);
     var popup = document.getElementById("mypopup");
     // console.log(popup);
 
