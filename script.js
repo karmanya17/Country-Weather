@@ -51,8 +51,8 @@ var minutes = "0" + date.getMinutes();
   return hours + ":" + minutes.substr(-2);
 }
 const popup=function(id,name){
-  console.log(id);
-  console.log(name);
+ // console.log(id);
+ // console.log(name);
   const url=`https://api.openweathermap.org/data/2.5/weather?q=,,`+id+`&appid=7efabb514883dd5b2b8b5d8fc318dec0&units=metric`
   fetch(url)
   .then(function(weatherData){
