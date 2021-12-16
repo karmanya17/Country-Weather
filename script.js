@@ -70,7 +70,7 @@ const popup=function(id,name){
     var temp=Math.floor(weatherData.main.temp);
     var humidity=weatherData.main.humidity;
     var wind=Math.floor(weatherData.wind.speed);
-    console.log(weatherData.sys.sunrise);
+   // console.log(weatherData.sys.sunrise);
     var sunrise=timeConvert(weatherData.sys.sunrise);
     var maxtemp=Math.floor(weatherData.main.temp_max);
     var mintemp=Math.floor(weatherData.main.temp_min);
